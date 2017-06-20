@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">伴</string>
+  <string name="btn_model_1">新闻头条</string>
+  <string name="btn_model_2">微信精选</string>
+  <string name="btn_model_3">轻松一刻</string>
+  <string name="btn_model_4">星座运势</string>
+  <string name="btn_model_5">梦境解析</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="93.02dp"
+  android:layout_height="wrap_content"
+  >
+
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/bg"
+    android:layout_width="match_parent"
+    android:layout_height="34.65dp"
+    android:layout_alignBottom="@+id/iv_icon"
+    android:gravity="center"
+    app:corner="9.3dp"
+    />
+
+  <ImageView
+    android:id="@+id/iv_icon"
+    android:layout_width="44.88dp"
+    android:layout_height="44.88dp"
+    android:layout_centerHorizontal="true"
+    tools:src="@drawable/international"
+    />
+
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="34.65dp"
+    android:layout_alignBottom="@+id/iv_icon"
+    android:gravity="center"
+    android:textColor="@color/md_white_1000"
+    android:textSize="16sp"
+    tools:text="国际"
+    />
+</RelativeLayout>

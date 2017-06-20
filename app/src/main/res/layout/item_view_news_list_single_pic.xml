@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginLeft="16dp"
+  android:layout_marginRight="16dp"
+  android:layout_marginTop="5dp"
+  android:layout_marginBottom="5dp"
+  android:orientation="vertical"
+  app:cardBackgroundColor="@color/md_white_1000"
+  app:cardCornerRadius="10dp"
+  app:cardElevation="3dp"
+  tools:background="@color/md_red_100"
+  >
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/pic"
+      android:layout_marginRight="8dp"
+      android:layout_toLeftOf="@+id/pic"
+      android:ellipsize="end"
+      android:gravity="left|center_vertical"
+      android:lines="3"
+      android:textColor="@color/md_black_1000"
+      android:textSize="16sp"
+      tools:text="杨幂的发际线再也回不去了吗？18.60杨幂的发际线再也回不去了吗？杨幂的发际线再也回不去了吗？"
+      />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/pic"
+      android:layout_width="93dp"
+      android:layout_height="93dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      tools:background="@color/md_blue_50"
+      />
+
+    <TextView
+      android:id="@+id/author"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/pic"
+      android:gravity="left|center_vertical"
+      android:textColor="@color/md_grey_500"
+      android:textSize="12sp"
+      tools:text="腾讯娱乐"
+      />
+
+    <TextView
+      android:id="@+id/time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/pic"
+      android:layout_marginLeft="16sp"
+      android:layout_toRightOf="@+id/author"
+      android:gravity="left|center_vertical"
+      android:textColor="@color/md_grey_500"
+      android:textSize="12sp"
+      tools:text="前天  11:30"
+      />
+
+  </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

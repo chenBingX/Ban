@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="148.837dp"
+  android:layout_marginBottom="5dp"
+  android:layout_marginLeft="16dp"
+  android:layout_marginRight="16dp"
+  android:layout_marginTop="5dp"
+  app:cardCornerRadius="10dp"
+  app:cardElevation="3dp"
+  tools:cardBackgroundColor="@color/md_blue_200"
+  >
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/pic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:actualImageScaleType="focusCrop"
+    app:roundedCornerRadius="10dp"
+    />
+
+  <com.coorchice.library.SuperTextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.5"
+    app:corner="10dp"
+    app:solid="@color/md_black_1000"
+    />
+
+  <TextView
+    android:id="@+id/tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/normal_margin"
+    android:layout_marginRight="@dimen/normal_margin"
+    android:ellipsize="end"
+    android:gravity="center"
+    android:lines="2"
+    android:textColor="@color/md_white_1000"
+    android:textSize="@dimen/small_title"
+    tools:text="【独家】2015年室内色彩搭配指南"
+    />
+
+  <TextView
+    android:id="@+id/tv_source"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|right"
+    android:layout_marginBottom="@dimen/normal_margin"
+    android:layout_marginRight="@dimen/normal_margin"
+    android:textColor="@color/md_grey_300"
+    android:textSize="@dimen/caption"
+    tools:text="尚品宅配"
+    />
+
+
+</android.support.v7.widget.CardView>

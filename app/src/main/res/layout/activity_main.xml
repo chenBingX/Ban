@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.coorchice.ban.model.MainActivity">
+
+
+
+  <RelativeLayout
+    android:id="@+id/layout_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/layout_navigator"
+    />
+
+  <LinearLayout
+    android:id="@+id/layout_navigator"
+    android:layout_width="match_parent"
+    android:layout_height="51.16dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/md_grey_100"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:clipChildren="false"
+    >
+
+    <com.coorchice.library.SuperTextView
+      android:id="@+id/btn_model_1"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_marginRight="8dp"
+      android:layout_weight="1"
+      android:gravity="bottom|center_horizontal"
+      android:paddingBottom="@dimen/smaller_margin"
+      android:text="@string/btn_model_1"
+      android:textColor="@color/home_bottom_bt_text"
+      android:textSize="@dimen/caption"
+      app:isShowState="true"
+      app:state_drawable="@drawable/news"
+      app:state_drawable_height="26.97dp"
+      app:state_drawable_mode="top"
+      app:state_drawable_padding_top="@dimen/small_margin"
+      app:state_drawable_width="26.97dp"
+      />
+
+    <com.coorchice.library.SuperTextView
+      android:id="@+id/btn_model_2"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_marginRight="8dp"
+      android:layout_weight="1"
+      android:gravity="bottom|center_horizontal"
+      android:paddingBottom="@dimen/smaller_margin"
+      android:text="@string/btn_model_2"
+      android:textColor="@color/home_bottom_bt_text"
+      android:textSize="@dimen/caption"
+      app:isShowState="true"
+      app:state_drawable="@drawable/wechat"
+      app:state_drawable_height="26.97dp"
+      app:state_drawable_mode="top"
+      app:state_drawable_padding_top="@dimen/small_margin"
+      app:state_drawable_width="26.97dp"
+      />
+
+    <com.coorchice.library.SuperTextView
+      android:id="@+id/btn_model_3"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_marginRight="8dp"
+      android:layout_weight="1"
+      android:gravity="bottom|center_horizontal"
+      android:paddingBottom="@dimen/smaller_margin"
+      android:text="@string/btn_model_3"
+      android:textColor="@color/home_bottom_bt_text"
+      android:textSize="@dimen/caption"
+      app:isShowState="true"
+      app:state_drawable="@drawable/joke"
+      app:state_drawable_height="26.97dp"
+      app:state_drawable_mode="top"
+      app:state_drawable_padding_top="@dimen/small_margin"
+      app:state_drawable_width="26.97dp"
+      />
+
+    <com.coorchice.library.SuperTextView
+      android:id="@+id/btn_model_4"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_marginRight="8dp"
+      android:layout_weight="1"
+      android:gravity="bottom|center_horizontal"
+      android:paddingBottom="@dimen/smaller_margin"
+      android:text="@string/btn_model_4"
+      android:textColor="@color/home_bottom_bt_text"
+      android:textSize="@dimen/caption"
+      app:isShowState="true"
+      app:state_drawable="@drawable/constellation"
+      app:state_drawable_height="26.97dp"
+      app:state_drawable_mode="top"
+      app:state_drawable_padding_top="@dimen/small_margin"
+      app:state_drawable_width="26.97dp"
+      />
+
+    <com.coorchice.library.SuperTextView
+      android:id="@+id/btn_model_5"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="bottom|center_horizontal"
+      android:paddingBottom="@dimen/smaller_margin"
+      android:text="@string/btn_model_5"
+      android:textColor="@color/home_bottom_bt_text"
+      android:textSize="@dimen/caption"
+      app:isShowState="true"
+      app:state_drawable="@drawable/dream"
+      app:state_drawable_height="26.97dp"
+      app:state_drawable_mode="top"
+      app:state_drawable_padding_top="@dimen/small_margin"
+      app:state_drawable_width="26.97dp"
+      />
+
+
+  </LinearLayout>
+
+</RelativeLayout>
