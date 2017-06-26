@@ -12,6 +12,8 @@ import com.coorchice.ban.model.base.INewsListFragment
 import com.coorchice.ban.model.news.adapter.NewsListAdapter
 import com.coorchice.ban.model.news.presenter.NewsListFragmentPresenter
 import com.coorchice.ban.network.DataModel.News
+import com.coorchice.ban.utils.loge
+import com.github.nuptboyzhb.lib.SuperSwipeRefreshLayout
 import org.jetbrains.anko.dip
 import org.jetbrains.anko.find
 
@@ -26,6 +28,7 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
     val presenter: NewsListFragmentPresenter = NewsListFragmentPresenter(this)
 
     private var newsList: RecyclerView? = null
+    private var layoutRefresh: SuperSwipeRefreshLayout? = null
 
     var newsListAdapter: NewsListAdapter? = null
 
@@ -53,7 +56,9 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
         initNewsList()
     }
 
+
     private fun findView() {
+        layoutRefresh = rootView?.find<SuperSwipeRefreshLayout>(R.id.layout_refresh)
         newsList = rootView?.find<RecyclerView>(R.id.rv_news_list)
     }
 
@@ -79,9 +84,27 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
 
 
     override fun addListener() {
+        layoutRefresh?.setOnPullRefreshListener(object : SuperSwipeRefreshLayout.OnPullRefreshListener {
+            override fun onPullEnable(p0: Boolean) {
+                loge("refresh -> onPullEnable")
+            }
+
+            override fun onPullDistance(p0: Int) {
+                loge("refresh -> onPullDistance")
+
+            }
+
+            override fun onRefresh() {
+                loge("refresh -> onRefresh")
+                presenter.requestNewsData(arguments.getString(KEY_TYPE))
+            }
+        })
     }
 
     override fun updateNewsData(data: List<News>?) {
+        if (layoutRefresh?.isRefreshing == true) {
+            layoutRefresh?.isRefreshing = false
+        }
         newsListAdapter?.updateData(data)
     }
 }

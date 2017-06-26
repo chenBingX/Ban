@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <TextView
+    android:id="@+id/tv_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/wechat_left"
+    android:layout_alignParentLeft="true"
+    android:maxWidth="250dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="22dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    tools:ignore="RtlHardcoded"
+    tools:text="早上在食堂买豆浆。我：“阿姨，还有没有红枣味豆浆了？”阿姨：“呀，卖完了，现在就只有黑米的了。”我：“好吧，我妥协，一杯黑米的吧！”接过来尝了一下：“阿姨，您拿错了吧？这个是红枣的啊！” 阿姨：“是啊，刺不刺激？惊不惊喜？”"
+    />
+</RelativeLayout>

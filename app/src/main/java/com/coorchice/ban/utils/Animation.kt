@@ -36,3 +36,24 @@ fun ScaleAnimation(view: View?, scale: Float, duration: Long, interpolator: Time
     }
     return set
 }
+
+
+fun floatJumpAnim(view: View?): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var scaleX = ObjectAnimator.ofFloat(view, View.SCALE_X, 0.9f, 1.1f)
+        scaleX.repeatMode = ObjectAnimator.REVERSE
+        scaleX.repeatCount = -1
+        var scaleY = ObjectAnimator.ofFloat(view, View.SCALE_Y, 0.9f, 1.1f)
+        scaleY.repeatMode = ObjectAnimator.REVERSE
+        scaleY.repeatCount = -1
+        var alphaAnim = ObjectAnimator.ofFloat(view, View.ALPHA, 0.8f, 1f)
+        alphaAnim.repeatMode = ObjectAnimator.REVERSE
+        alphaAnim.repeatCount = -1
+        set.duration = 2 * 1000
+        set.interpolator = AccelerateDecelerateInterpolator()
+        set.playTogether(scaleX, scaleY, alphaAnim)
+        set.start()
+    }
+    return set
+}

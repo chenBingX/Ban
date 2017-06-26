@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <include
+    android:id="@+id/layout_header_bar"
+    layout="@layout/layout_header_bar"/>
+
+  <RelativeLayout
+    android:id="@+id/layout_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/layout_header_bar"
+    />
+  
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/btn_word"
+    android:layout_width="44.65dp"
+    android:layout_height="44.65dp"
+    app:corner="24dp"
+    app:solid="@color/md_orange_200"
+    android:text="@string/word"
+    android:gravity="center"
+    android:textSize="@dimen/title"
+    android:textColor="@color/md_white_1000"
+    android:textStyle="bold"
+    android:layout_above="@+id/btn_picture"
+    android:layout_alignRight="@id/btn_picture"
+    android:layout_marginBottom="14dp"
+    />
+
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/btn_picture"
+    android:layout_width="44.65dp"
+    android:layout_height="44.65dp"
+    app:corner="24dp"
+    app:solid="@color/md_blue_200"
+    android:text="@string/picture"
+    android:gravity="center"
+    android:textSize="@dimen/title"
+    android:textColor="@color/md_white_1000"
+    android:textStyle="bold"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="24.18dp"
+    android:layout_marginRight="8dp"
+    />
+
+</RelativeLayout>

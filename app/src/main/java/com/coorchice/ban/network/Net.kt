@@ -2,6 +2,8 @@ package com.coorchice.ban.network
 
 import com.chenbing.oneweather.Utils.NetworkUtils
 import com.coorchice.ban.BanApplication
+import com.coorchice.ban.network.DataModel.JokePicture
+import com.coorchice.ban.network.DataModel.JokeWord
 import com.coorchice.ban.network.DataModel.NewsResponse
 import com.coorchice.ban.network.DataModel.WechatNewsResponse
 import com.coorchice.ban.utils.AppUtils
@@ -121,6 +123,20 @@ object Net {
                           onSuccessCallback: OnSuccessCallback<WechatNewsResponse?>,
                           onFailureCallback: OnFailureCallback<WechatNewsResponse?>) {
         request(API_JUHE.getWechatNewsData(KEY_WECHAT_NEWS_DATA, pno, ps), onSuccessCallback, onFailureCallback)
+    }
+
+    val KEY_JOKE_DATA = "bdd5c63bdcd0479cb3c77c6a86743f73"
+    fun getJokeWordData(page: Int,
+                        rows: Int,
+                        onSuccessCallback: OnSuccessCallback<List<JokeWord?>?>,
+                        onFailureCallback: OnFailureCallback<List<JokeWord?>?>) {
+        request(API_AVATARDATA.getJokeWordData(KEY_JOKE_DATA, page, rows), onSuccessCallback, onFailureCallback)
+    }
+    fun getJokePictureData(page: Int,
+                        rows: Int,
+                        onSuccessCallback: OnSuccessCallback<List<JokePicture?>?>,
+                        onFailureCallback: OnFailureCallback<List<JokePicture?>?>) {
+        request(API_AVATARDATA.getJokePictureData(KEY_JOKE_DATA, page, rows), onSuccessCallback, onFailureCallback)
     }
 
 

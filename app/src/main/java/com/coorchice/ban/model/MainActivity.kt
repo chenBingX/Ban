@@ -4,30 +4,26 @@ import android.app.Fragment
 import android.os.Bundle
 import com.coorchice.ban.R
 import com.coorchice.ban.model.base.BaseActivity
+import com.coorchice.ban.model.joke.view.fragment.JokeFragment
 import com.coorchice.ban.model.news.view.fragment.NewsFragment
 import com.coorchice.ban.model.wechat.view.fragment.WechatNewsFragment
-import com.coorchice.ban.network.DataModel.NewsResponse
-import com.coorchice.ban.network.Net
-import com.coorchice.ban.network.OnFailureCallback
-import com.coorchice.ban.network.OnSuccessCallback
 import com.coorchice.ban.utils.Pop
-import com.coorchice.ban.utils.loge
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.textColor
 
 class MainActivity : BaseActivity() {
-    val NEWS = 0
-    val WECHAT = 1
-    val JOKE = 2
-    val CONSTELLATION = 3
-    val DREAM = 4
+    private val NEWS = 0
+    private val WECHAT = 1
+    private val JOKE = 2
+    private val CONSTELLATION = 3
+    private val DREAM = 4
 
     private var currentShowFragment: Fragment? = null
     private var currentModel: Int? = null
     val TAG_NEWS_FRAGMENT = "tag_news_fragment"
     private var newsFragment: Fragment? = null
     private var wechatNewsFragment: WechatNewsFragment? = null
+    private var jokeFragment: JokeFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,17 +34,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initData() {
-        Net.getNewsData("top",
-                object : OnSuccessCallback<NewsResponse?> {
-                    override fun onSuccess(data: NewsResponse?) {
-                        loge(Gson().toJson(data))
-                    }
-                },
-                object : OnFailureCallback<NewsResponse?> {
-                    override fun onFailure(message: String?) {
-                    }
-                }
-        )
     }
 
     override fun initView() {
@@ -88,6 +73,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
+
     private fun showModel(model: Int) {
         if (currentModel == model) {
             return
@@ -111,8 +97,10 @@ class MainActivity : BaseActivity() {
                 showFragment(wechatNewsFragment, model)
             }
             JOKE -> {
-                currentShowFragment = null
-                currentModel = model
+                if (jokeFragment == null) {
+                    jokeFragment = JokeFragment.getInstance()
+                }
+                showFragment(jokeFragment, model)
             }
             CONSTELLATION -> {
                 currentShowFragment = null

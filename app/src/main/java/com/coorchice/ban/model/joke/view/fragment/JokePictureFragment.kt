@@ -1,4 +1,4 @@
-package com.coorchice.ban.model.wechat.view.fragment
+package com.coorchice.ban.model.joke.view.fragment
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -8,68 +8,63 @@ import android.support.v7.widget.RecyclerView
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import com.coorchice.ban.R
 import com.coorchice.ban.model.base.BaseFragment
-import com.coorchice.ban.model.base.IWechatNewsFragment
-import com.coorchice.ban.model.wechat.adapter.WechatNewsListAdapter
-import com.coorchice.ban.model.wechat.presenter.WechatNewsFragmentPresenter
-import com.coorchice.ban.network.DataModel.WechatNews
+import com.coorchice.ban.model.base.IJokeFragment
+import com.coorchice.ban.model.joke.adapter.JokePictureListAdapter
+import com.coorchice.ban.model.joke.adapter.JokeWordListAdapter
+import com.coorchice.ban.model.joke.presenter.JokeFragmentPresenter
+import com.coorchice.ban.network.DataModel.JokePicture
 import com.coorchice.ban.utils.loge
 import com.coorchice.library.SuperTextView
 import com.github.nuptboyzhb.lib.SuperSwipeRefreshLayout
 import org.jetbrains.anko.dip
 import org.jetbrains.anko.find
-import org.jetbrains.anko.sp
 import org.jetbrains.anko.textColor
 
 /**
  * Project Name:Ban
  * Author:CoorChice
- * Date:2017/6/12
+ * Date:2017/6/25
  * Notes:
  */
-class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
+class JokePictureFragment : BaseFragment(), IJokeFragment<JokePicture> {
 
-    private var wechatNewsList: RecyclerView? = null
+
     private var layoutRefresh: SuperSwipeRefreshLayout? = null
-    private var tvTitle: TextView? = null
+    private var jokePictureList: RecyclerView? = null
 
-    private var wechatNewsListAdapter: WechatNewsListAdapter? = null
-
-    val presenter = WechatNewsFragmentPresenter(this)
+    private val presenter: JokeFragmentPresenter<JokePicture> = JokeFragmentPresenter(this)
+    private var jokePictureListAdapter: JokePictureListAdapter? = null
 
     companion object {
-        fun getInstance(): WechatNewsFragment {
+        fun getInstance(): JokePictureFragment {
             val bundle = Bundle()
-            val fragment = WechatNewsFragment()
+            val fragment = JokePictureFragment()
             fragment.arguments = bundle
             return fragment
         }
     }
 
     override fun getContentViewResId(): Int {
-        return R.layout.fragment_wechat_news
+        return R.layout.fragment_joke_picture
+
     }
 
     override fun initData() {
-        presenter.requestWechatNewsData(true)
+        presenter.requestJokePictureData(true)
     }
 
     override fun initView() {
-        findView()
+        findViews()
         initLayoutRefresh()
-        initWechatNewsList()
-
+        initJokeWordList()
     }
 
-    private fun findView() {
-        tvTitle = rootView?.find<TextView>(R.id.tv_title)
-        tvTitle?.text = resources.getString(R.string.btn_model_2)
-        rootView?.find<ImageView>(R.id.btn_back)?.visibility = View.GONE
+    private fun findViews() {
         layoutRefresh = rootView?.find<SuperSwipeRefreshLayout>(R.id.layout_refresh)
-        wechatNewsList = rootView?.find<RecyclerView>(R.id.rv_wechat_news_list)
+        jokePictureList = rootView?.find<RecyclerView>(R.id.rv_joke_picture_list)
+
     }
 
     private fun initLayoutRefresh() {
@@ -85,8 +80,7 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
             }
 
             override fun onRefresh() {
-                loge("refresh -> onRefresh")
-                presenter.requestWechatNewsData(true)
+                presenter.requestJokePictureData(true)
             }
         })
 
@@ -101,8 +95,7 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
             }
 
             override fun onLoadMore() {
-                loge("loadmore -> onLoadMore")
-                presenter.requestWechatNewsData(false)
+                presenter.requestJokePictureData(false)
             }
 
         })
@@ -120,44 +113,36 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
         layoutRefresh?.setFooterView(refreshFooterView)
     }
 
-    private fun initWechatNewsList() {
-        wechatNewsList?.layoutManager = LinearLayoutManager(activity)
-        wechatNewsList?.itemAnimator = DefaultItemAnimator()
-        wechatNewsList?.addItemDecoration(object : RecyclerView.ItemDecoration() {
+    private fun initJokeWordList() {
+        jokePictureList?.layoutManager = LinearLayoutManager(activity)
+        jokePictureList?.itemAnimator = DefaultItemAnimator()
+        jokePictureList?.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
                 var position = parent?.layoutManager?.getPosition(view)
                 if (position == 0) {
-                    outRect?.top = dip(11)
+                    outRect?.top = dip(16)
                 }
+                outRect?.left = dip(16)
+                outRect?.right = dip(16)
+                outRect?.bottom = dip(8)
                 if (position == parent?.adapter?.itemCount?.minus(1)) {
-                    outRect?.bottom = dip(11)
-                } else {
-                    outRect?.bottom = dip(3)
+                    outRect?.bottom = dip(26)
                 }
             }
         })
-        wechatNewsListAdapter = WechatNewsListAdapter(activity, emptyList())
-        wechatNewsList?.adapter = wechatNewsListAdapter
+        jokePictureListAdapter = JokePictureListAdapter(activity, emptyList())
+        jokePictureList?.adapter = jokePictureListAdapter
     }
+
 
     override fun addListener() {
-        tvTitle?.setOnClickListener{
-            wechatNewsList?.smoothScrollToPosition(0)
-        }
     }
 
-    override fun updateWechatNewsData(data: List<WechatNews>?) {
+    override fun updateJokeData(data: List<JokePicture>?) {
         if (layoutRefresh?.isRefreshing == true) {
             layoutRefresh?.isRefreshing = false
         }
         layoutRefresh?.setLoadMore(false)
-        wechatNewsListAdapter?.updateData(data)
-    }
-
-    override fun onSpecialSituation(message: String?) {
-        if (layoutRefresh?.isRefreshing == true) {
-            layoutRefresh?.isRefreshing = false
-        }
-        layoutRefresh?.setLoadMore(false)
+        jokePictureListAdapter?.updateData(data)
     }
 }

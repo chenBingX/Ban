@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/sd_pic"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    />
+
+  <TextView
+    android:id="@+id/tv_content"
+    android:layout_width="match_parent"
+    android:layout_height="42.79dp"
+    android:layout_below="@+id/sd_pic"
+    android:gravity="center_vertical"
+    android:paddingLeft="16dp"
+    android:textColor="@color/md_black_1000"
+    android:textSize="@dimen/body"
+    android:background="@color/md_white_1000"
+    tools:text="生活教你认清自己"
+    />
+
+  <View
+    android:id="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:layout_below="@+id/tv_content"
+    android:background="#EFEFEF"
+    />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="42.79dp"
+    android:layout_below="@+id/line"
+    android:background="#F9F9F9"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+
+    <TextView
+      android:id="@+id/tv_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:textColor="#8a8a8a"
+      android:textSize="12sp"
+      tools:text="2017-06-26"
+      />
+
+    <ImageView
+      android:layout_width="12dp"
+      android:layout_height="12dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/like0"
+      />
+  </RelativeLayout>
+
+</RelativeLayout>

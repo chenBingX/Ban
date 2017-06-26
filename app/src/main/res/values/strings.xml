@@ -5,4 +5,6 @@
   <string name="btn_model_3">轻松一刻</string>
   <string name="btn_model_4">星座运势</string>
   <string name="btn_model_5">梦境解析</string>
+  <string name="word">文</string>
+  <string name="picture">图</string>
 </resources>

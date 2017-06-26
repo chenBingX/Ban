@@ -1,6 +1,7 @@
 package com.coorchice.ban.network
 
-import com.coorchice.ban.network.DataModel.NewsResponse
+import com.coorchice.ban.network.DataModel.JokePicture
+import com.coorchice.ban.network.DataModel.JokeWord
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,11 +14,14 @@ import retrofit2.http.Query
  */
 interface ApiAvatardata {
 
-    @GET("Joke/QueryJokeByTime")
-    abstract fun getNewsData(@Query("key") key: String,
-                             @Query("time") time: String,
-                             @Query("sort") sort: String,
-                             @Query("page") page: Int,
-                             @Query("rows") rows: Int): Call<BaseResponse<NewsResponse>>
+    @GET("Joke/NewstJoke")
+    abstract fun getJokeWordData(@Query("key") key: String,
+                                 @Query("page") page: Int,
+                                 @Query("rows") rows: Int): Call<BaseResponse<List<JokeWord?>?>>
+
+    @GET("Joke/NewstImg")
+    abstract fun getJokePictureData(@Query("key") key: String,
+                                    @Query("page") page: Int,
+                                    @Query("rows") rows: Int): Call<BaseResponse<List<JokePicture?>?>>
 
 }

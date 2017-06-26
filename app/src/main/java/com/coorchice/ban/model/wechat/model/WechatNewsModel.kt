@@ -16,7 +16,7 @@ import com.coorchice.ban.network.OnSuccessCallback
 class WechatNewsModel : IWeChatNewsModel {
 
     override fun requestWechatNewsData(pno: Int, ps: Int, onResponseListener: OnResponseListener<WechatNewsResponse>) {
-        Net.getWechatNewsData(pno,ps,
+        Net.getWechatNewsData(pno, ps,
                 object:OnSuccessCallback<WechatNewsResponse?>{
                     override fun onSuccess(data: WechatNewsResponse?) {
                         onResponseListener.onSuccess(data)

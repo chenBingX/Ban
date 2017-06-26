@@ -18,3 +18,7 @@ interface IWechatNewsFragment {
 
     fun onSpecialSituation(message: String?)
 }
+
+interface IJokeFragment<T> {
+    fun updateJokeData(data: List<T>?)
+}

@@ -3,6 +3,9 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="vertical"
+  android:background="@color/md_grey_100"
   >
 
   <com.github.nuptboyzhb.lib.SuperSwipeRefreshLayout
@@ -11,13 +14,11 @@
     android:layout_height="match_parent"
     >
 
-  <android.support.v7.widget.RecyclerView
-    android:id="@+id/rv_news_list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:overScrollMode="never"
-    />
-
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_joke_word_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:overScrollMode="never"
+      />
   </com.github.nuptboyzhb.lib.SuperSwipeRefreshLayout>
-
 </RelativeLayout>
