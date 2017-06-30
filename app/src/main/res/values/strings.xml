@@ -7,4 +7,13 @@
   <string name="btn_model_5">梦境解析</string>
   <string name="word">文</string>
   <string name="picture">图</string>
+  <string name="lucky_index_all">综合运势</string>
+  <string name="lucky_index_love">爱情运势</string>
+  <string name="lucky_index_work">事业运势</string>
+  <string name="lucky_index_money">财富运势</string>
+  <string name="lucky_index_health">健康运势</string>
+  <string name="lucky_color">幸运颜色</string>
+  <string name="lucky_number">幸运数字</string>
+  <string name="match_constellation">速配星座</string>
+  <string name="no_data">暂无数据，点击刷新</string>
 </resources>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:overScrollMode="never"
+  >
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="10dp"
+    >
+
+    <TextView
+      android:id="@+id/tv_description"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:textColor="@color/md_grey_600"
+      android:textSize="13sp"
+      tools:text="  忙于工作，忽视了另一半，多陪陪心上人吧。单身的人，虽然魅力值满满，却好像不太愿意曝光，低调行事更有安全感。"
+      />
+
+    <!--运势-->
+    <LinearLayout
+      android:id="@+id/layout_lucky_index"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/tv_description"
+      android:layout_marginTop="16dp"
+      android:orientation="vertical"
+      tools:background="@color/translucent"
+      >
+
+      <!--综合运势-->
+      <RelativeLayout
+        android:id="@+id/layout_lucky_all"
+        android:layout_width="match_parent"
+        android:layout_height="71.63dp">
+
+        <com.coorchice.library.SuperTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:corner="5dp"
+          app:solid="@color/translucent"
+          app:stroke_color="@color/all"
+          app:stroke_width="1dp"
+          />
+
+        <TextView
+          android:id="@+id/tv_title_all"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/lucky_index_all"
+          android:textColor="@color/all"
+          android:textSize="16sp"
+          />
+
+        <TextView
+          android:id="@+id/tv_lucky_index_all"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/all"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="100%"
+          />
+
+        <ProgressBar
+          android:id="@+id/pb_all"
+          style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="9.3dp"
+          android:progressDrawable="@drawable/progress_bar_all"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="17dp"
+          android:layout_marginRight="17dp"
+          />
+
+
+      </RelativeLayout>
+
+      <!--爱情运势-->
+      <RelativeLayout
+        android:id="@+id/layout_lucky_love"
+        android:layout_width="match_parent"
+        android:layout_height="71.63dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <com.coorchice.library.SuperTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:corner="5dp"
+          app:solid="@color/translucent"
+          app:stroke_color="@color/love"
+          app:stroke_width="1dp"
+          />
+
+        <TextView
+          android:id="@+id/tv_title_love"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/lucky_index_love"
+          android:textColor="@color/love"
+          android:textSize="16sp"
+          />
+
+        <TextView
+          android:id="@+id/tv_lucky_index_love"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/love"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="100%"
+          />
+
+        <ProgressBar
+          android:id="@+id/pb_love"
+          style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="9.3dp"
+          android:progressDrawable="@drawable/progress_bar_love"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="17dp"
+          android:layout_marginRight="17dp"
+          />
+
+      </RelativeLayout>
+
+      <!--事业运势-->
+      <RelativeLayout
+        android:id="@+id/layout_lucky_work"
+        android:layout_width="match_parent"
+        android:layout_height="71.63dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <com.coorchice.library.SuperTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:corner="5dp"
+          app:solid="@color/translucent"
+          app:stroke_color="@color/work"
+          app:stroke_width="1dp"
+          />
+
+        <TextView
+          android:id="@+id/tv_title_work"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/lucky_index_work"
+          android:textColor="@color/work"
+          android:textSize="16sp"
+          />
+
+        <TextView
+          android:id="@+id/tv_lucky_index_work"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/work"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="100%"
+          />
+
+        <ProgressBar
+          android:id="@+id/pb_work"
+          style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="9.3dp"
+          android:progressDrawable="@drawable/progress_bar_work"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="17dp"
+          android:layout_marginRight="17dp"
+          />
+      </RelativeLayout>
+
+      <!--财富运势-->
+      <RelativeLayout
+        android:id="@+id/layout_lucky_money"
+        android:layout_width="match_parent"
+        android:layout_height="71.63dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <com.coorchice.library.SuperTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:corner="5dp"
+          app:solid="@color/translucent"
+          app:stroke_color="@color/money"
+          app:stroke_width="1dp"
+          />
+
+        <TextView
+          android:id="@+id/tv_title_money"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/lucky_index_money"
+          android:textColor="@color/money"
+          android:textSize="16sp"
+          />
+
+        <TextView
+          android:id="@+id/tv_lucky_index_money"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/money"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="100%"
+          />
+
+        <ProgressBar
+          android:id="@+id/pb_money"
+          style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="9.3dp"
+          android:progressDrawable="@drawable/progress_bar_money"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="17dp"
+          android:layout_marginRight="17dp"
+          />
+      </RelativeLayout>
+
+      <!--健康运势-->
+      <RelativeLayout
+        android:id="@+id/layout_lucky_health"
+        android:layout_width="match_parent"
+        android:layout_height="71.63dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <com.coorchice.library.SuperTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:corner="5dp"
+          app:solid="@color/translucent"
+          app:stroke_color="@color/health"
+          app:stroke_width="1dp"
+          />
+
+        <TextView
+          android:id="@+id/tv_title_health"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/lucky_index_health"
+          android:textColor="@color/health"
+          android:textSize="16sp"
+          />
+
+        <TextView
+          android:id="@+id/tv_lucky_index_health"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/health"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="100%"
+          />
+
+        <ProgressBar
+          android:id="@+id/pb_health"
+          style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="9.3dp"
+          android:progressDrawable="@drawable/progress_bar_health"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="17dp"
+          android:layout_marginRight="17dp"
+          />
+
+
+      </RelativeLayout>
+    </LinearLayout>
+
+    <!--floater_1-->
+    <RelativeLayout
+      android:id="@+id/floater_1"
+      android:layout_width="74.42dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/layout_lucky_index"
+      android:layout_marginTop="21.39dp"
+      >
+
+      <TextView
+        android:id="@+id/tv_lucky_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="彩色"
+        android:textSize="16.74sp"
+        tools:textColor="@color/constellation_12"
+        android:layout_centerHorizontal="true"
+        />
+      
+      <com.coorchice.library.SuperTextView
+        android:id="@+id/platform_color"
+        android:layout_width="match_parent"
+        android:layout_height="23.25dp"
+        android:text="@string/lucky_color"
+        android:layout_below="@+id/tv_lucky_color"
+        android:layout_marginTop="18.60dp"
+        android:textColor="@color/md_white_1000"
+        android:textSize="11.16dp"
+        android:gravity="center"
+        app:corner="36dp"
+        app:solid="@color/constellation_12"
+        app:left_bottom_corner="true"
+        app:right_bottom_corner="true"
+        />
+
+      <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/platform_color"
+        />
+    </RelativeLayout>
+
+    <!--floater_2-->
+    <RelativeLayout
+      android:id="@+id/floater_2"
+      android:layout_width="74.42dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/layout_lucky_index"
+      android:layout_marginTop="21.39dp"
+      android:layout_centerHorizontal="true"
+      >
+
+      <TextView
+        android:id="@+id/tv_lucky_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="1"
+        android:textSize="16.74sp"
+        tools:textColor="@color/constellation_12"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
+
+      <com.coorchice.library.SuperTextView
+        android:id="@+id/platform_number"
+        android:layout_width="match_parent"
+        android:layout_height="23.25dp"
+        android:text="@string/lucky_number"
+        android:layout_below="@+id/tv_lucky_number"
+        android:layout_marginTop="18.60dp"
+        android:textColor="@color/md_white_1000"
+        android:textSize="11.16dp"
+        android:gravity="center"
+        app:corner="36dp"
+        app:solid="@color/constellation_12"
+        app:left_bottom_corner="true"
+        app:right_bottom_corner="true"
+        />
+
+      <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/platform_number"
+        />
+    </RelativeLayout>
+
+    <!--floater_3-->
+    <RelativeLayout
+      android:id="@+id/floater_3"
+      android:layout_width="74.42dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/layout_lucky_index"
+      android:layout_marginTop="21.39dp"
+      android:layout_alignParentRight="true"
+      >
+
+      <TextView
+        android:id="@+id/tv_match_constellation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="天平座"
+        android:textSize="16.74sp"
+        tools:textColor="@color/constellation_12"
+        android:layout_centerHorizontal="true"
+        />
+
+      <com.coorchice.library.SuperTextView
+        android:id="@+id/platform_match_constellation"
+        android:layout_width="match_parent"
+        android:layout_height="23.25dp"
+        android:background="@drawable/color_12"
+        android:text="@string/match_constellation"
+        android:layout_below="@+id/tv_match_constellation"
+        android:layout_marginTop="18.60dp"
+        android:textColor="@color/md_white_1000"
+        android:textSize="11.16dp"
+        android:gravity="center"
+        app:corner="36dp"
+        app:solid="@color/constellation_12"
+        app:left_bottom_corner="true"
+        app:right_bottom_corner="true"
+        />
+
+      <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/platform_match_constellation"
+        />
+    </RelativeLayout>
+
+    <include
+      android:id="@+id/layout_week_constellation"
+      layout="@layout/layout_week_constellation"
+      android:visibility="gone"
+      />
+  </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

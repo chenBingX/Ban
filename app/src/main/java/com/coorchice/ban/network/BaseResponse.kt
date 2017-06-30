@@ -7,3 +7,5 @@ package com.coorchice.ban.network
  * Notes:
  */
 class BaseResponse<T>(var error_code: Int, var reason: String, var result: T?)
+
+class BaseResponse2<T>(var error_code: Int, var reason: String, var result1: T?)

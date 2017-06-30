@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  >
+
+  <include
+    android:id="@+id/layout_header_bar"
+    layout="@layout/layout_header_bar"/>
+
+  <android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/layout_header_bar"
+    android:elevation="0dp"
+    >
+
+    <android.support.design.widget.AppBarLayout
+      android:id="@+id/layout_app_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/translucent"
+      android:elevation="0dp"
+      >
+
+      <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="167.44dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        tools:background="#CD6488"
+        >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/iv_icon"
+          android:layout_width="93dp"
+          android:layout_height="93dp"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="27.9dp"
+          app:backgroundImage="@color/opacity_3_black"
+          app:roundAsCircle="true"
+          />
+
+        <TextView
+          android:id="@+id/tv_date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/iv_icon"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="14.88dp"
+          android:textColor="@color/md_white_1000"
+          android:textSize="14.88sp"
+          android:textStyle="bold"
+          tools:text="1.20 - 2.18"
+          />
+
+        <com.coorchice.library.SuperTextView
+          android:id="@+id/tv_time"
+          android:layout_width="wrap_content"
+          android:layout_height="23.25dp"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="9.3dp"
+          android:layout_marginTop="9.3dp"
+          android:paddingBottom="2dp"
+          android:paddingLeft="8dp"
+          android:paddingRight="8dp"
+          android:paddingTop="2dp"
+          android:textColor="@color/md_white_1000"
+          android:textSize="14.88sp"
+          android:textStyle="bold"
+          app:corner="3dp"
+          app:solid="#4CF5F5F5"
+          tools:text="06/26 星期一"
+          />
+      </RelativeLayout>
+
+      <android.support.design.widget.TabLayout
+        android:id="@+id/layout_tab"
+        android:layout_width="match_parent"
+        android:layout_height="42.79dp"
+        android:layout_gravity="bottom"
+        android:elevation="0dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/home_bottom_bt_text_select"
+        app:tabTextColor="@color/md_grey_400"
+        />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+      android:id="@+id/vp"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      />
+
+  </android.support.design.widget.CoordinatorLayout>
+
+  <include
+    android:id="@+id/layout_select_constellation"
+    layout="@layout/layout_select_constellation"
+    tools:visibility="gone"
+    />
+</RelativeLayout>

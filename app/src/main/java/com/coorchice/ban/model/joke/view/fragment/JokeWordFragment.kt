@@ -53,6 +53,7 @@ class JokeWordFragment : BaseFragment(), IJokeFragment<JokeWord> {
     }
 
     override fun initView() {
+        showEmpty(true)
         findViews()
         initLayoutRefresh()
         initJokeWordList()
@@ -137,6 +138,7 @@ class JokeWordFragment : BaseFragment(), IJokeFragment<JokeWord> {
     }
 
     override fun updateJokeData(data: List<JokeWord>?) {
+        showEmpty(false)
         if (layoutRefresh?.isRefreshing == true) {
             layoutRefresh?.isRefreshing = false
         }

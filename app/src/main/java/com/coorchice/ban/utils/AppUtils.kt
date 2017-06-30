@@ -5,6 +5,7 @@ import android.app.KeyguardManager
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.telephony.TelephonyManager
@@ -14,7 +15,6 @@ import android.view.ViewConfiguration
 import android.view.inputmethod.InputMethodManager
 import com.coorchice.ban.BanApplication
 import com.coorchice.ban.BuildConfig
-import com.google.gson.Gson
 import java.io.*
 import java.net.Inet4Address
 import java.net.NetworkInterface
@@ -301,4 +301,12 @@ object AppUtils {
 
     val modelVersion: String
         get() = Build.MODEL
+
+    fun getResUri(resId: Int?): Uri? {
+        return Uri.parse("res://" + BanApplication.appContext?.packageName + "/" + resId)
+    }
+
+    fun getResUriString(resId: Int): String {
+        return "res://" + BanApplication.appContext?.packageName + "/" + resId
+    }
 }

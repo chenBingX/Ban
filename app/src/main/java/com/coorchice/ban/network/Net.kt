@@ -2,10 +2,7 @@ package com.coorchice.ban.network
 
 import com.chenbing.oneweather.Utils.NetworkUtils
 import com.coorchice.ban.BanApplication
-import com.coorchice.ban.network.DataModel.JokePicture
-import com.coorchice.ban.network.DataModel.JokeWord
-import com.coorchice.ban.network.DataModel.NewsResponse
-import com.coorchice.ban.network.DataModel.WechatNewsResponse
+import com.coorchice.ban.network.DataModel.*
 import com.coorchice.ban.utils.AppUtils
 import com.coorchice.ban.utils.loge
 import com.coorchice.ban.utils.logv
@@ -109,6 +106,20 @@ object Net {
         })
     }
 
+    private fun <T> request2(call: Call<BaseResponse2<T?>>,
+                            onSuccessCallback: OnSuccessCallback<T?>,
+                            onFailureCallback: OnFailureCallback<T?>) {
+        call.enqueue(object : Callback<BaseResponse2<T?>> {
+            override fun onResponse(call: Call<BaseResponse2<T?>>?, response: Response<BaseResponse2<T?>>?) {
+                onSuccessCallback.onSuccess(response?.body()?.result1)
+            }
+
+            override fun onFailure(call: Call<BaseResponse2<T?>>?, t: Throwable?) {
+                onFailureCallback.onFailure(t?.message)
+            }
+        })
+    }
+
 
     val KEY_NEWS_DATA = "ca8284abeb7ce27ef05965abad467ff9"
     fun getNewsData(type: String,
@@ -138,6 +149,15 @@ object Net {
                         onFailureCallback: OnFailureCallback<List<JokePicture?>?>) {
         request(API_AVATARDATA.getJokePictureData(KEY_JOKE_DATA, page, rows), onSuccessCallback, onFailureCallback)
     }
+
+    val KEY_CONSTELLATION_DATA = "b8ac42a9e73e40d693dde39c3b32160a"
+    fun getConstellationInfo(consName: String,
+                             type: String,
+                             onSuccessCallback: OnSuccessCallback<ConstellationInfo?>,
+                             onFailureCallback: OnFailureCallback<ConstellationInfo?>) {
+        request2(API_AVATARDATA.getConstellationInfo(KEY_CONSTELLATION_DATA, consName, type), onSuccessCallback, onFailureCallback)
+    }
+
 
 
 }

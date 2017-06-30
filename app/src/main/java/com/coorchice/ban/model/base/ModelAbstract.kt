@@ -1,9 +1,6 @@
 package com.coorchice.ban.model.base
 
-import com.coorchice.ban.network.DataModel.JokePicture
-import com.coorchice.ban.network.DataModel.JokeWord
-import com.coorchice.ban.network.DataModel.NewsResponse
-import com.coorchice.ban.network.DataModel.WechatNewsResponse
+import com.coorchice.ban.network.DataModel.*
 
 /**
  * Project Name:Ban
@@ -23,5 +20,8 @@ interface IJokeModel {
     fun requestJokeWordData(page: Int, rows: Int, onResponseListener: OnResponseListener<List<JokeWord?>?>)
 
     fun requestJokePictureData(page: Int, rows: Int, onResponseListener: OnResponseListener<List<JokePicture?>?>)
+}
 
+interface IConstellationModel {
+    fun requestConstellationInfo(consName: String, type: String, onResponseListener: OnResponseListener<ConstellationInfo?>)
 }

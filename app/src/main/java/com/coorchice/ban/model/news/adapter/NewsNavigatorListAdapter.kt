@@ -10,6 +10,7 @@ import com.coorchice.ban.model.base.OnItemViewClickListener
 import com.coorchice.ban.model.news.adapter.ItemView.NewsNavigatorListItemView
 import com.coorchice.ban.model.news.entry.NewsNavigation
 import com.coorchice.ban.utils.ScaleAnimation
+import com.coorchice.ban.utils.playScaleAnimation
 
 /**
  * Project Name:Ban
@@ -34,10 +35,10 @@ class NewsNavigatorListAdapter(val context: Context?) : RecyclerView.Adapter<Rec
         val itemView = viewHolder?.itemView as NewsNavigatorListItemView
         itemView.setData(NewsNavigation.values()[position], position)
         itemView.onItemViewClickListener = onItemViewClickListener
-        ScaleAnimation(itemView, 1f, 0, LinearInterpolator())
+        playScaleAnimation(itemView, 1f, 0, LinearInterpolator())
         itemView.alpha = 0.5f
         if (selectedItem == position) {
-            ScaleAnimation(itemView, 1.02f, 300, AccelerateInterpolator())
+            playScaleAnimation(itemView, 1.02f, 300, AccelerateInterpolator())
             itemView.alpha = 1f
         }
     }

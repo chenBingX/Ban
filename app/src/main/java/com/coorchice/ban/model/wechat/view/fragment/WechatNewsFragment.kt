@@ -58,6 +58,7 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
     }
 
     override fun initView() {
+        showEmpty(true)
         findView()
         initLayoutRefresh()
         initWechatNewsList()
@@ -147,6 +148,7 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
     }
 
     override fun updateWechatNewsData(data: List<WechatNews>?) {
+        showEmpty(false)
         if (layoutRefresh?.isRefreshing == true) {
             layoutRefresh?.isRefreshing = false
         }

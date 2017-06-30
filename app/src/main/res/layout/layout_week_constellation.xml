@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  >
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:text="@string/lucky_index_all"
+    android:textColor="@color/all"
+    android:textSize="16sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_info_all"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left"
+    android:textColor="@color/md_grey_600"
+    android:textSize="13sp"
+    tools:text="asdjfhaskjhdgfkjasdfasdfasdfasdfasdfasdfasdfasdflasdf"
+    tools:visibility="visible"
+    />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="10dp"
+    android:text="@string/lucky_index_love"
+    android:textColor="@color/love"
+    android:textSize="16sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_info_love"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left"
+    android:textColor="@color/md_grey_600"
+    android:textSize="13sp"
+    tools:text="asdjfhaskjhdgfkjasdfasdfasdfasdfasdfasdfasdfasdflasdf"
+
+    />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="10dp"
+    android:text="@string/lucky_index_work"
+    android:textColor="@color/work"
+    android:textSize="16sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_info_work"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left"
+    android:textColor="@color/md_grey_600"
+    android:textSize="13sp"
+    tools:text="asdjfhaskjhdgfkjasdfasdfasdfasdfasdfasdfasdfasdflasdf"
+
+    />
+
+  <TextView
+    android:id="@+id/tv_title_money"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="10dp"
+    android:text="@string/lucky_index_money"
+    android:textColor="@color/money"
+    android:textSize="16sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_info_money"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left"
+    android:textColor="@color/md_grey_600"
+    android:textSize="13sp"
+    tools:text="asdjfhaskjhdgfkjasdfasdfasdfasdfasdfasdfasdfasdflasdf"
+
+    />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="10dp"
+    android:text="@string/lucky_index_health"
+    android:textColor="@color/health"
+    android:textSize="16sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_info_health"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left"
+    android:textColor="@color/md_grey_600"
+    android:textSize="13sp"
+    tools:text="asdjfhaskjhdgfkjasdfasdfasdfasdfasdfasdfasdfasdflasdf"
+    />
+
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.app.Fragment
 import android.os.Bundle
 import com.coorchice.ban.R
 import com.coorchice.ban.model.base.BaseActivity
+import com.coorchice.ban.model.constellation.view.fragment.ConstellationFragment
 import com.coorchice.ban.model.joke.view.fragment.JokeFragment
 import com.coorchice.ban.model.news.view.fragment.NewsFragment
 import com.coorchice.ban.model.wechat.view.fragment.WechatNewsFragment
@@ -20,10 +21,10 @@ class MainActivity : BaseActivity() {
 
     private var currentShowFragment: Fragment? = null
     private var currentModel: Int? = null
-    val TAG_NEWS_FRAGMENT = "tag_news_fragment"
     private var newsFragment: Fragment? = null
     private var wechatNewsFragment: WechatNewsFragment? = null
     private var jokeFragment: JokeFragment? = null
+    private var constellationFragment: ConstellationFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,8 +104,10 @@ class MainActivity : BaseActivity() {
                 showFragment(jokeFragment, model)
             }
             CONSTELLATION -> {
-                currentShowFragment = null
-                currentModel = model
+                if (constellationFragment == null) {
+                    constellationFragment = ConstellationFragment.getInstance()
+                }
+                showFragment(constellationFragment, model)
             }
             DREAM -> {
                 currentShowFragment = null
@@ -117,7 +120,7 @@ class MainActivity : BaseActivity() {
     private fun showFragment(fragment: Fragment?, model: Int) {
         if (!(fragment?.isAdded as Boolean)) {
             fragmentManager.beginTransaction()
-                    .add(R.id.layout_fragment, fragment, TAG_NEWS_FRAGMENT)
+                    .add(R.id.layout_fragment, fragment)
                     .commitAllowingStateLoss()
         }
         if (fragment?.isDetached as Boolean) {

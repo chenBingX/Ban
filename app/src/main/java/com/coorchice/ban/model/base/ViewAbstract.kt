@@ -1,5 +1,6 @@
 package com.coorchice.ban.model.base
 
+import com.coorchice.ban.network.DataModel.ConstellationInfo
 import com.coorchice.ban.network.DataModel.News
 import com.coorchice.ban.network.DataModel.WechatNews
 
@@ -21,4 +22,8 @@ interface IWechatNewsFragment {
 
 interface IJokeFragment<T> {
     fun updateJokeData(data: List<T>?)
+}
+
+interface IConstellationFragment{
+    fun updateConstellationData(data: ConstellationInfo?)
 }

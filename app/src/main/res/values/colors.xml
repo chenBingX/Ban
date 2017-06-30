@@ -14,6 +14,7 @@
   <color name="news_navigator_5_bg">#8bc34a</color>
   <color name="news_navigator_6_bg">#ba68c8</color>
 
+  <color name="translucent">#00000000</color>
 
   <!--reds-->
   <color name="md_red_50">#FFEBEE</color>
@@ -308,5 +309,43 @@
   <color name="md_blue_grey_700">#455A64</color>
   <color name="md_blue_grey_800">#37474F</color>
   <color name="md_blue_grey_900">#263238</color>
+
+  <!--black-->
+  <color name="opacity_05_black">#0d000000</color>
+  <color name="opacity_1_black">#1a000000</color>
+  <color name="opacity_1_5_black">#26000000</color>
+  <color name="opacity_2_black">#33000000</color>
+  <color name="opacity_2_5_black">#40000000</color>
+  <color name="opacity_3_black">#4d000000</color>
+  <color name="opacity_4_black">#66000000</color>
+  <color name="opacity_5_black">#80000000</color>
+  <color name="opacity_6_5_black">#a6000000</color>
+  <color name="opacity_6_black">#60000000</color>
+  <color name="opacity_7_black">#b2000000</color>
+  <color name="opacity_7_5_black">#bf000000</color>
+  <color name="opacity_8_black">#cc000000</color>
+  <color name="opacity_9_black">#d2000000</color>
+  <color name="opacity_9_5_black">#F2000000</color>
+
+  <!--lucky index color-->
+  <color name="all">#6FB0DD</color>
+  <color name="health">#6EB447</color>
+  <color name="love">#E25B8C</color>
+  <color name="money">#ED8D49</color>
+  <color name="work">#9A7BD4</color>
+
+  <!--constellation color-->
+  <color name="constellation_1">#75AD15</color>
+  <color name="constellation_2">#87622F</color>
+  <color name="constellation_3">#DD2210</color>
+  <color name="constellation_4">#F4C119</color>
+  <color name="constellation_5">#622B19</color>
+  <color name="constellation_6">#945398</color>
+  <color name="constellation_7">#2DAFA0</color>
+  <color name="constellation_8">#525390</color>
+  <color name="constellation_9">#909090</color>
+  <color name="constellation_10">#31190D</color>
+  <color name="constellation_11">#2898DE</color>
+  <color name="constellation_12">#D87B9A</color>
 
 </resources>

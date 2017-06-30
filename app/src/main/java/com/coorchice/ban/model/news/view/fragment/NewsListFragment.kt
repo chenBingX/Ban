@@ -52,6 +52,7 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
     }
 
     override fun initView() {
+        showEmpty(true)
         findView()
         initNewsList()
     }
@@ -102,6 +103,7 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
     }
 
     override fun updateNewsData(data: List<News>?) {
+        showEmpty(false)
         if (layoutRefresh?.isRefreshing == true) {
             layoutRefresh?.isRefreshing = false
         }

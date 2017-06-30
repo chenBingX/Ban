@@ -3,8 +3,10 @@ package com.coorchice.ban.utils
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.TimeInterpolator
+import android.util.Property
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import kotlinx.android.synthetic.main.fragment_constellation_detail_today.*
 
 /**
  * Project Name:Ban
@@ -32,7 +34,49 @@ fun ScaleAnimation(view: View?, scale: Float, duration: Long, interpolator: Time
         set.duration = duration
         set.interpolator = interpolator
         set.playTogether(scaleX, scaleY)
+    }
+    return set
+}
+
+fun ScaleAnimation(view: View?, scale: Float, duration: Long, interpolator: TimeInterpolator, repeat: Boolean): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var scaleX = ObjectAnimator.ofFloat(view, View.SCALE_X, scale)
+        var scaleY = ObjectAnimator.ofFloat(view, View.SCALE_Y, scale)
+        if (repeat) {
+            scaleX.repeatCount = -1
+            scaleX.repeatMode = ObjectAnimator.REVERSE
+            scaleY.repeatCount = -1
+            scaleY.repeatMode = ObjectAnimator.REVERSE
+        }
+        set.duration = duration
+        set.interpolator = interpolator
+        set.playTogether(scaleX, scaleY)
+    }
+    return set
+}
+
+fun playScaleAnimation(view: View?, scale: Float, duration: Long, interpolator: TimeInterpolator): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var scaleX = ObjectAnimator.ofFloat(view, View.SCALE_X, scale)
+        var scaleY = ObjectAnimator.ofFloat(view, View.SCALE_Y, scale)
+        set.duration = duration
+        set.interpolator = interpolator
+        set.playTogether(scaleX, scaleY)
         set.start()
+    }
+    return set
+}
+
+fun ScaleAnimation(view: View?, fromScale: Float, toScale: Float, duration: Long, interpolator: TimeInterpolator): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var scaleX = ObjectAnimator.ofFloat(view, View.SCALE_X, fromScale, toScale)
+        var scaleY = ObjectAnimator.ofFloat(view, View.SCALE_Y, fromScale, toScale)
+        set.duration = duration
+        set.interpolator = interpolator
+        set.playTogether(scaleX, scaleY)
     }
     return set
 }
@@ -56,4 +100,52 @@ fun floatJumpAnim(view: View?): AnimatorSet {
         set.start()
     }
     return set
+}
+
+fun rotateAnim(view: View?, from: Float, to: Float, duration: Long, interpolator: TimeInterpolator, repeat: Boolean): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var anim = ObjectAnimator.ofFloat(view, View.ROTATION, from, to)
+        if (repeat) {
+            anim.repeatMode = ObjectAnimator.RESTART
+            anim.repeatCount = -1
+        }
+        set.duration = duration
+        set.interpolator = interpolator
+        set.playTogether(anim)
+        set.start()
+    }
+    return set
+}
+
+fun alphaAnim(view: View?, from: Float, to: Float, duration: Long, interpolator: TimeInterpolator): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var alphaAnim = ObjectAnimator.ofFloat(view, View.ALPHA, from, to)
+        set.duration = duration
+        set.interpolator = interpolator
+        set.play(alphaAnim)
+    }
+    return set
+}
+
+fun translationYAnim(view: View?, from: Float, to: Float, duration: Long, interpolator: TimeInterpolator, repeat: Boolean): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var translationAnim = ObjectAnimator.ofFloat(view, View.TRANSLATION_Y, from, to)
+        if (repeat) {
+            translationAnim.repeatMode = ObjectAnimator.REVERSE
+            translationAnim.repeatCount = -1
+        }
+        set.duration = duration
+        set.interpolator = interpolator
+        set.play(translationAnim)
+    }
+    return set
+}
+
+fun playTranslationYAnim(view: View?, from: Float, to: Float, duration: Long, interpolator: TimeInterpolator, repeat: Boolean): AnimatorSet {
+    var translationYAnim = translationYAnim(view, from, to, duration, interpolator, repeat)
+    translationYAnim.start()
+    return translationYAnim
 }
