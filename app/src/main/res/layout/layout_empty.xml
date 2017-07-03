@@ -6,23 +6,34 @@
   android:background="@color/md_white_1000"
   >
 
-  <ImageView
-    android:id="@+id/iv_pic"
-    android:layout_width="wrap_content"
+  <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:src="@drawable/no_data"
-    android:layout_centerVertical="true"
-    />
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    >
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/no_data"
-    android:layout_below="@+id/iv_pic"
-    android:layout_marginTop="16dp"
-    android:layout_centerHorizontal="true"
-    android:textSize="16sp"
-    />
+  <ImageView
+      android:id="@+id/iv_pic"
+      android:layout_width="200dp"
+      android:layout_height="130dp"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/no_data"
+      />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/iv_pic"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="16dp"
+      android:text="@string/no_data"
+      android:textSize="16sp"
+      />
+
+  </LinearLayout>
+
 
 </RelativeLayout>

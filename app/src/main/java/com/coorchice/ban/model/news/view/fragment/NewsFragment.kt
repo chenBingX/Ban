@@ -14,6 +14,7 @@ import com.coorchice.ban.model.base.OnItemViewClickListener
 import com.coorchice.ban.model.base.AppFragmentPagerAdapter.FragmentPagerAdapter
 import com.coorchice.ban.model.news.adapter.NewsNavigatorListAdapter
 import com.coorchice.ban.model.news.entry.NewsNavigation
+import kotlinx.android.synthetic.main.layout_header_bar.*
 import org.jetbrains.anko.dip
 import org.jetbrains.anko.find
 
@@ -51,6 +52,9 @@ class NewsFragment : BaseFragment() {
 
     override fun initView() {
         findView()
+        btn_back.visibility = View.INVISIBLE
+        tv_title.text = resources.getString(R.string.btn_model_1)
+//        header_line.visibility = View.GONE
         initNewNavigationList()
         initVpNewsListFragment()
     }
@@ -69,7 +73,7 @@ class NewsFragment : BaseFragment() {
                 if (position == 0) {
                     outRect?.left = dip(16)
                 } else {
-                    outRect?.left = dip(22.32f)
+                    outRect?.left = dip(8f)
                 }
                 if (position == parent?.layoutManager?.childCount) {
                     outRect?.right = dip(16)

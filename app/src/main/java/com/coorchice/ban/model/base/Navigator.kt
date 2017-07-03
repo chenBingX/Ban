@@ -1,6 +1,7 @@
 package com.coorchice.ban.model.base
 
 import android.content.Context
+import com.coorchice.ban.model.MainActivity
 import com.coorchice.ban.model.web.activity.WebActivity
 
 /**
@@ -12,4 +13,8 @@ import com.coorchice.ban.model.web.activity.WebActivity
 
 fun toWebActivity(context: Context, url: String?, title: String?) {
     context.startActivity(WebActivity.getIntent(context, url, title))
+}
+
+fun toMainActivity(context: Context) {
+    context.startActivity(MainActivity.getIntent(context))
 }

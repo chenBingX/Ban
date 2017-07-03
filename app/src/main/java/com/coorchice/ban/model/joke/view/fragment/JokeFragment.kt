@@ -69,7 +69,7 @@ class JokeFragment : BaseFragment() {
     private fun findViews() {
         tvTitle = rootView?.find<TextView>(R.id.tv_title)
         tvTitle?.text = resources.getString(R.string.btn_model_3)
-        rootView?.find<ImageView>(R.id.btn_back)?.visibility = View.GONE
+        rootView?.find<ImageView>(R.id.btn_back)?.visibility = View.INVISIBLE
 
         btnWord = rootView?.find<SuperTextView>(R.id.btn_word)
         btnPicture = rootView?.find<SuperTextView>(R.id.btn_picture)

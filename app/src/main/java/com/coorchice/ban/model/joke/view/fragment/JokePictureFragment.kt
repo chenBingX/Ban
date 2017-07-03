@@ -12,7 +12,6 @@ import com.coorchice.ban.R
 import com.coorchice.ban.model.base.BaseFragment
 import com.coorchice.ban.model.base.IJokeFragment
 import com.coorchice.ban.model.joke.adapter.JokePictureListAdapter
-import com.coorchice.ban.model.joke.adapter.JokeWordListAdapter
 import com.coorchice.ban.model.joke.presenter.JokeFragmentPresenter
 import com.coorchice.ban.network.DataModel.JokePicture
 import com.coorchice.ban.utils.loge
@@ -34,7 +33,7 @@ class JokePictureFragment : BaseFragment(), IJokeFragment<JokePicture> {
     private var layoutRefresh: SuperSwipeRefreshLayout? = null
     private var jokePictureList: RecyclerView? = null
 
-    private val presenter: JokeFragmentPresenter<JokePicture> = JokeFragmentPresenter(this)
+    private val presenter: JokeFragmentPresenter<JokePicture> by lazy { JokeFragmentPresenter(this) }
     private var jokePictureListAdapter: JokePictureListAdapter? = null
 
     companion object {

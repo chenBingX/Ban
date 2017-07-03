@@ -3,17 +3,19 @@
   android:id="@+id/layout_header_bar"
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="48dp"
-  xmlns:tools="http://schemas.android.com/tools">
+  android:layout_height="45dp"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:background="@color/md_white_1000"
+  >
 
   <ImageView
     android:id="@+id/btn_back"
-    android:layout_width="48dp"
+    android:layout_width="45dp"
     android:layout_height="match_parent"
     android:padding="10dp"
     android:scaleType="centerCrop"
     android:src="@drawable/back"
-    tools:background="@color/md_blue_200"
+    android:tint="@color/main_color"
     />
 
   <TextView
@@ -28,26 +30,27 @@
     android:paddingLeft="@dimen/base_margin"
     android:paddingRight="@dimen/base_margin"
     android:textColor="@color/md_black_1000"
-    android:textSize="@dimen/title"
+    android:textSize="@dimen/small_title"
     tools:text="asdfasdfasdfasdfasdassadasasdfsdf"
     />
 
   <ImageView
     android:id="@+id/btn_right"
-    android:layout_width="48dp"
+    android:layout_width="45dp"
     android:layout_height="match_parent"
     android:layout_alignParentRight="true"
-    android:padding="10dp"
+    android:padding="12dp"
     android:scaleType="centerCrop"
-    android:visibility="gone"
-    tools:background="@color/md_blue_200"
+    android:visibility="invisible"
+    tools:visibility="visible"
+    tools:src="@drawable/select_constellation"
     />
 
   <View
-    android:id="@+id/line_1"
+    android:id="@+id/header_line"
     android:layout_width="match_parent"
     android:layout_height="0.3dp"
-    android:background="@color/md_grey_200"
+    android:background="@color/split_line_0"
     android:layout_alignParentBottom="true"
     />
 </RelativeLayout>

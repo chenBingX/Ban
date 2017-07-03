@@ -47,13 +47,6 @@ abstract class BaseFragment : Fragment() {
             layout_empty.visibility = View.GONE
     }
 
-    fun showProgress(show: Boolean){
-        if (show)
-            progress_bar.visibility = View.VISIBLE
-        else
-            progress_bar.visibility = View.GONE
-    }
-
     fun reload(){
 
     }

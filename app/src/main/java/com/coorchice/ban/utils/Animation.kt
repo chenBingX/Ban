@@ -149,3 +149,18 @@ fun playTranslationYAnim(view: View?, from: Float, to: Float, duration: Long, in
     translationYAnim.start()
     return translationYAnim
 }
+
+fun translationXAnim(view: View?, from: Float, to: Float, duration: Long, interpolator: TimeInterpolator, repeat: Boolean): AnimatorSet {
+    val set = AnimatorSet()
+    if (view != null) {
+        var translationAnim = ObjectAnimator.ofFloat(view, View.TRANSLATION_X, from, to)
+        if (repeat) {
+            translationAnim.repeatMode = ObjectAnimator.REVERSE
+            translationAnim.repeatCount = -1
+        }
+        set.duration = duration
+        set.interpolator = interpolator
+        set.play(translationAnim)
+    }
+    return set
+}

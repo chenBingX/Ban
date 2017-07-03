@@ -18,22 +18,27 @@
   <application
     android:name=".BanApplication"
     android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
+    android:icon="@drawable/app_icon"
     android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
+    android:roundIcon="@drawable/app_icon"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".model.MainActivity"
-      android:screenOrientation="portrait"
-      >
+    <activity
+      android:name=".model.welcome.view.WelcomeActivity"
+      android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+    <activity
+      android:name=".model.MainActivity"
+      android:screenOrientation="portrait">
+    </activity>
     <activity android:name=".model.web.activity.WebActivity">
     </activity>
+
   </application>
 
 </manifest>

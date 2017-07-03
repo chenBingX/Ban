@@ -12,6 +12,7 @@ import android.telephony.TelephonyManager
 import android.util.Base64
 import android.view.View
 import android.view.ViewConfiguration
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import com.coorchice.ban.BanApplication
 import com.coorchice.ban.BuildConfig
@@ -301,6 +302,12 @@ object AppUtils {
 
     val modelVersion: String
         get() = Build.MODEL
+
+    val screenWidth: Int
+        get() = (BanApplication.appContext?.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.width
+
+    val screenHeight: Int
+        get() = (BanApplication.appContext?.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.height
 
     fun getResUri(resId: Int?): Uri? {
         return Uri.parse("res://" + BanApplication.appContext?.packageName + "/" + resId)

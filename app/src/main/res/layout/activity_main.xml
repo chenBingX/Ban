@@ -7,12 +7,18 @@
   android:layout_height="match_parent"
   tools:context="com.coorchice.ban.model.MainActivity">
 
-
-
   <RelativeLayout
     android:id="@+id/layout_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_above="@+id/lin0"
+    />
+
+  <View
+    android:id="@+id/lin0"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:background="@color/split_line_0"
     android:layout_above="@+id/layout_navigator"
     />
 
@@ -21,7 +27,7 @@
     android:layout_width="match_parent"
     android:layout_height="51.16dp"
     android:layout_alignParentBottom="true"
-    android:background="@color/md_grey_100"
+    android:background="@color/md_white_1000"
     android:orientation="horizontal"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -125,5 +131,13 @@
 
 
   </LinearLayout>
+
+  <ImageView
+    android:id="@+id/coorchice"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:src="@drawable/coorchice"
+    android:layout_centerVertical="true"
+    />
 
 </RelativeLayout>

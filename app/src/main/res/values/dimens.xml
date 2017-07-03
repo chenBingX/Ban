@@ -15,4 +15,5 @@
   <dimen name="small_title">18sp</dimen>
   <dimen name="body">13sp</dimen>
   <dimen name="caption">12sp</dimen>
+  <dimen name="fab_margin">16dp</dimen>
 </resources>

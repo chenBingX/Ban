@@ -68,7 +68,7 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
     private fun findView() {
         tvTitle = rootView?.find<TextView>(R.id.tv_title)
         tvTitle?.text = resources.getString(R.string.btn_model_2)
-        rootView?.find<ImageView>(R.id.btn_back)?.visibility = View.GONE
+        rootView?.find<ImageView>(R.id.btn_back)?.visibility = View.INVISIBLE
         layoutRefresh = rootView?.find<SuperSwipeRefreshLayout>(R.id.layout_refresh)
         wechatNewsList = rootView?.find<RecyclerView>(R.id.rv_wechat_news_list)
     }
@@ -127,13 +127,8 @@ class WechatNewsFragment : BaseFragment(), IWechatNewsFragment {
         wechatNewsList?.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
                 var position = parent?.layoutManager?.getPosition(view)
-                if (position == 0) {
-                    outRect?.top = dip(11)
-                }
                 if (position == parent?.adapter?.itemCount?.minus(1)) {
-                    outRect?.bottom = dip(11)
-                } else {
-                    outRect?.bottom = dip(3)
+                    outRect?.bottom = dip(16)
                 }
             }
         })

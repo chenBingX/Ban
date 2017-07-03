@@ -25,7 +25,9 @@ import org.jetbrains.anko.find
  */
 class NewsListFragment : BaseFragment(), INewsListFragment {
 
-    val presenter: NewsListFragmentPresenter = NewsListFragmentPresenter(this)
+    private val presenter: NewsListFragmentPresenter by lazy {
+        NewsListFragmentPresenter(this)
+    }
 
     private var newsList: RecyclerView? = null
     private var layoutRefresh: SuperSwipeRefreshLayout? = null
@@ -75,7 +77,7 @@ class NewsListFragment : BaseFragment(), INewsListFragment {
                 if (position == parent?.adapter?.itemCount?.minus(1)) {
                     outRect?.bottom = dip(11)
                 } else {
-                    outRect?.bottom = dip(3)
+                    outRect?.bottom = dip(2)
                 }
             }
         })

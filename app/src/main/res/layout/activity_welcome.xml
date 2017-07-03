@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.coorchice.ban.model.welcome.view.WelcomeActivity">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/sd_pic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    tools:background="@color/md_blue_200"
+    />
+
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/tv_count_down"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    android:textColor="@color/md_white_1000"
+    android:textSize="@dimen/caption"
+    app:stroke_color="@color/md_white_1000"
+    app:stroke_width="0.5dp"
+    app:corner="1dp"
+    app:solid="@color/opacity_3_black"
+    tools:text="00:00"/>
+
+  <com.coorchice.library.SuperTextView
+    android:id="@+id/btn_enter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="60dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="5dp"
+    android:text="立即进入"
+    android:textColor="@color/md_white_1000"
+    android:textSize="@dimen/title"
+    android:visibility="gone"
+    app:corner="2dp"
+    app:solid="@color/opacity_1_black"
+    app:stroke_color="@color/md_white_1000"
+    app:stroke_width="1dp"
+    />
+
+</RelativeLayout>

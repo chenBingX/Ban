@@ -4,15 +4,21 @@
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
 
-  <color name="home_bottom_bt_text">#8a8a8a</color>
-  <color name="home_bottom_bt_text_select">#ff584b</color>
+  <!--theme color-->
+  <color name="main_color">#ff2d55</color>
+  <color name="split_line_0">#cccccc</color>
+  <color name="split_line_1">#dddddd</color>
+  <color name="background">#ebebeb</color>
 
-  <color name="news_navigator_1_bg">#29b6f6</color>
-  <color name="news_navigator_2_bg">#e84e40</color>
+  <color name="home_bottom_bt_text">#929292</color>
+  <color name="home_bottom_bt_text_select">#ff2d55</color>
+
+  <color name="news_navigator_1_bg">#6eb2cc</color>
+  <color name="news_navigator_2_bg">#f69581</color>
   <color name="news_navigator_3_bg">#bdbdbd</color>
-  <color name="news_navigator_4_bg">#ff9800</color>
-  <color name="news_navigator_5_bg">#8bc34a</color>
-  <color name="news_navigator_6_bg">#ba68c8</color>
+  <color name="news_navigator_4_bg">#febb50</color>
+  <color name="news_navigator_5_bg">#50cf8e</color>
+  <color name="news_navigator_6_bg">#c79efe</color>
 
   <color name="translucent">#00000000</color>
 

@@ -32,7 +32,7 @@ class JokeWordFragment : BaseFragment(), IJokeFragment<JokeWord> {
     private var layoutRefresh: SuperSwipeRefreshLayout? = null
     private var jokeWordList: RecyclerView? = null
 
-    private val presenter: JokeFragmentPresenter<JokeWord> = JokeFragmentPresenter(this)
+    private val presenter: JokeFragmentPresenter<JokeWord> by lazy { JokeFragmentPresenter(this) }
     private var jokeWordListAdapter: JokeWordListAdapter? = null
 
     companion object {

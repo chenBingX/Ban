@@ -5,31 +5,29 @@
   android:layout_height="match_parent"
   xmlns:tools="http://schemas.android.com/tools"
   android:orientation="vertical"
+  android:background="@color/md_white_1000"
   >
+
+  <include
+    android:id="@+id/layout_header_bar"
+    layout="@layout/layout_header_bar"/>
 
   <android.support.v7.widget.RecyclerView
     android:id="@+id/rv_news_navigation"
     android:layout_width="match_parent"
-    android:layout_height="55.837dp"
+    android:layout_height="45dp"
     android:overScrollMode="never"
     android:paddingTop="@dimen/small_margin"
-    tools:background="@color/md_red_50"
+    android:background="@color/md_white_1000"
     tools:listitem="@layout/item_view_news_navigator_list"
-    />
-
-  <View
-    android:id="@+id/line_1"
-    android:layout_width="match_parent"
-    android:layout_height="0.3dp"
-    android:background="@color/md_grey_200"
-    android:layout_below="@+id/rv_news_navigation"
+    android:layout_below="@+id/layout_header_bar"
     />
 
   <android.support.v4.view.ViewPager
     android:id="@+id/vp_news_list_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@+id/line_1"
+    android:layout_below="@+id/rv_news_navigation"
     android:overScrollMode="never"
     />
 

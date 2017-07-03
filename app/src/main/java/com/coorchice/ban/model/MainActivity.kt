@@ -1,15 +1,21 @@
 package com.coorchice.ban.model
 
 import android.app.Fragment
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.ViewConfiguration
 import com.coorchice.ban.R
 import com.coorchice.ban.model.base.BaseActivity
+import com.coorchice.ban.model.base.toWebActivity
 import com.coorchice.ban.model.constellation.view.fragment.ConstellationFragment
 import com.coorchice.ban.model.joke.view.fragment.JokeFragment
 import com.coorchice.ban.model.news.view.fragment.NewsFragment
 import com.coorchice.ban.model.wechat.view.fragment.WechatNewsFragment
-import com.coorchice.ban.utils.Pop
+import com.coorchice.ban.utils.*
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.dip
 import org.jetbrains.anko.textColor
 
 class MainActivity : BaseActivity() {
@@ -25,6 +31,16 @@ class MainActivity : BaseActivity() {
     private var wechatNewsFragment: WechatNewsFragment? = null
     private var jokeFragment: JokeFragment? = null
     private var constellationFragment: ConstellationFragment? = null
+    private var coorchiceX: Float = 0f
+    private var coorchiceY: Float = 0f
+    private var isCoorChiceClick: Boolean = false
+
+    companion object {
+        fun getIntent(context: Context): Intent {
+            var intent = Intent(context, MainActivity::class.java)
+            return intent
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,10 +86,10 @@ class MainActivity : BaseActivity() {
             selectModel(DREAM)
             showModel(DREAM)
             Pop(it)
-
         }
-    }
 
+        listenCoorChiceTouchEvent()
+    }
 
     private fun showModel(model: Int) {
         if (currentModel == model) {
@@ -174,6 +190,43 @@ class MainActivity : BaseActivity() {
                 btn_model_5.textColor = resources.getColor(R.color.home_bottom_bt_text_select)
             }
 
+        }
+    }
+
+    private fun listenCoorChiceTouchEvent() {
+        coorchice.setOnTouchListener { v, event ->
+            when (event?.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    coorchiceX = event.rawX
+                    coorchiceY = event.rawY
+                    isCoorChiceClick = true
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    val dx = event.rawX - coorchiceX
+                    val dy = event.rawY - coorchiceY
+                    coorchice.offsetXY(dx, dy)
+                    coorchiceX = event.rawX
+                    coorchiceY = event.rawY
+                    if (dx >= ViewConfiguration.getTouchSlop() || dy >= ViewConfiguration.getTouchSlop()) {
+                        isCoorChiceClick = false
+                    }
+                }
+                MotionEvent.ACTION_UP -> {
+                    if (isCoorChiceClick) {
+                        val size = coorchice.width
+                        if (coorchice.locationX in 0..(AppUtils.screenWidth - size)
+                                && coorchice.locationY in 0..(AppUtils.screenHeight - size))
+                            toWebActivity(this, "http://www.jianshu.com/u/cfec7d70bbec", "CoorChice")
+                    } else {
+                        if (coorchice.locationX <= AppUtils.screenWidth / 2) {
+                            coorchice.setLocationSmooth(dip(8).toFloat(), coorchice.y, 500L)
+                        } else {
+                            coorchice.setLocationSmooth((AppUtils.screenWidth - dip(8) - coorchice.width).toFloat(), coorchice.y, 500L)
+                        }
+                    }
+                }
+            }
+            true
         }
     }
 

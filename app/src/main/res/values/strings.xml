@@ -16,4 +16,5 @@
   <string name="lucky_number">幸运数字</string>
   <string name="match_constellation">速配星座</string>
   <string name="no_data">暂无数据，点击刷新</string>
+  <string name="title_activity_welcome">WelcomeActivity</string>
 </resources>

@@ -16,6 +16,7 @@ import com.coorchice.ban.utils.*
 import kotlinx.android.synthetic.main.fragment_constellation.*
 import kotlinx.android.synthetic.main.layout_header_bar.*
 import kotlinx.android.synthetic.main.layout_select_constellation.*
+import kotlinx.android.synthetic.main.layout_header_bar.btn_back as btnHeaderBack
 
 /**
  * Project Name:Ban
@@ -50,8 +51,11 @@ class ConstellationFragment : BaseFragment() {
 
     override fun initView() {
         tv_title.text = resources.getString(R.string.btn_model_4)
-        btn_back.visibility = View.GONE
+        btnHeaderBack.visibility = View.INVISIBLE
         tv_time.text = "${formatCurrentDate("MM/dd")} ${getWeekOfCurrent()}"
+        btn_right.visibility = View.VISIBLE
+        btn_right.setImageResource(R.drawable.select_constellation)
+        iv_constellation_bg.setImageURI(AppUtils.getResUriString(R.drawable.constellation_bg))
 
         iconViews = listOf(icon_aries, icon_taurus, icon_gemini, icon_cancer, icon_lion, icon_virgo, icon_libra, icon_scorpio, icon_sagittarius, icon_capricorn, icon_aquarius, icon_pisces)
         listenIconClick()
@@ -73,21 +77,25 @@ class ConstellationFragment : BaseFragment() {
                 constellation = Constellation.values()[i]
                 if (constellation != null) SpCacher.saveConstellation(constellation!!)
                 updateConstellation()
-                val set = AnimatorSet()
-                var anim0 = ScaleAnimation(layout_select_constellation, 1.5f, 300, LinearInterpolator())
-                var anim1 = alphaAnim(layout_select_constellation, 1f, 0f, 300, LinearInterpolator())
-                set.addListener(object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator?) {
-                        bgScaleAnim?.end()
-                        iconRotateAnim?.end()
-                        layout_select_constellation.visibility = View.GONE
-                    }
-                })
-                set.playTogether(anim0, anim1)
-                set.start()
+                stopSelectConstellation()
             })
         }
 
+    }
+
+    private fun stopSelectConstellation() {
+        val set = AnimatorSet()
+        var anim0 = ScaleAnimation(layout_select_constellation, 1.5f, 300, LinearInterpolator())
+        var anim1 = alphaAnim(layout_select_constellation, 1f, 0f, 300, LinearInterpolator())
+        set.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                bgScaleAnim?.end()
+                iconRotateAnim?.end()
+                layout_select_constellation.visibility = View.GONE
+            }
+        })
+        set.playTogether(anim0, anim1)
+        set.start()
     }
 
     fun updateConstellation() {
@@ -130,11 +138,21 @@ class ConstellationFragment : BaseFragment() {
         if (icon != null) {
             iv_icon.setImageURI(AppUtils.getResUriString(icon))
         }
+        val bg = constellation?.bg
+        if (bg != null) {
+            sd_bg.setImageURI(AppUtils.getResUriString(bg))
+        }
+
     }
 
     override fun addListener() {
-        tv_title.setOnClickListener({
+
+        btn_right.setOnClickListener({
             playAnim()
+        })
+
+        btn_back_select.setOnClickListener({
+            stopSelectConstellation()
         })
     }
 
@@ -167,7 +185,7 @@ class ConstellationFragment : BaseFragment() {
     }
 
     private fun playAnim1() {
-        bgScaleAnim = ScaleAnimation(iv_constellation_bg, 1.3f, 1000 * 50, LinearInterpolator(), true)
+        bgScaleAnim = ScaleAnimation(iv_constellation_bg, 1.3f, 1000 * 30, LinearInterpolator(), true)
         bgScaleAnim?.start()
         val set1 = AnimatorSet()
         val set1List = mutableListOf<Animator>()
