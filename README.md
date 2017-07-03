@@ -67,7 +67,7 @@ btn_picture.solid = ***
 
 当然，Anko还有许多有趣的特性，比如可以通过这个函数`dip()`，来快速的将dp转为px，你都不用自己去封装。相关资料可以到这里查看：[Kotlin/anko【https://github.com/Kotlin/anko#which-anko-libraries-are-available-and-1which-do-i-need】](https://github.com/Kotlin/anko#which-anko-libraries-are-available-and-1which-do-i-need)。  
 
-# 初见 —《伴》
+# 遇见《伴》
 目前，**《伴》** 共有4个模块：新闻头条，微信精选，轻松一刻，星座运势。她们被打造来陪伴寂寞的你（如果你寂寞的话）。下面CoorChice展示一下《伴》的大致面貌吧。 
 
 ## 新闻头条
